@@ -7,6 +7,7 @@ ARG artifact=target/spring-boot-web.jar
 
 WORKDIR /opt/app
 
+RUN "echo ${artifact}"
 COPY ${artifact} app.jar
 
 # This should not be changed
