@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'laguduva90/venkat-maven-docker17'
+      image 'laguduva90/venkat-maven-docker17:v1'
       args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
     }
   }
