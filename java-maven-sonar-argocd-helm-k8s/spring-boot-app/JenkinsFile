@@ -68,8 +68,7 @@ pipeline {
     
               BUILD_NUMBER=${BUILD_NUMBER}
     
-              sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" \
-                java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
+              sed -i -E "s|(image: laguduva90/ultimate-cicd:).*|\\1${BUILD_NUMBER}|" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
     
               git add java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
     
